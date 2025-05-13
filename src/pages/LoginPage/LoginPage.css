@@ -1,0 +1,203 @@
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.Login-Page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Login-Page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/src/assets/RbCauayan.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+    mix-blend-mode: multiply;
+    margin: 0 auto;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.Login-Container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.Login-Container h2 {
+    text-align: center;
+    color: #2d3436;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.Login-Container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #ee7752, #e73c7e);
+    border-radius: 2px;
+}
+
+.LP-Office-Id,
+.LP-Password {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.LP-Office-Id label,
+.LP-Password label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #2d3436;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.LP-Office-Id input,
+.LP-Password input {
+    width: 90%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.LP-Office-Id input:focus,
+.LP-Password input:focus {
+    outline: none;
+    border-color: #23a6d5;
+    box-shadow: 0 0 0 4px rgba(35, 166, 213, 0.1);
+    transform: translateY(-2px);
+}
+
+.LP-Office-Id input::placeholder,
+.LP-Password input::placeholder {
+    color: #95a5a6;
+    font-size: 0.9rem;
+}
+
+.LP-Submit {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+}
+
+.LP-Submit button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+}
+
+.LP-Submit button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.LP-Submit button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 25px;
+    top: 53%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+    transition: color 0.3s ease-in-out;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+@media (max-width: 480px) {
+    .Login-Container {
+        margin: 1rem;
+        padding: 1.5rem;
+        border-radius: 16px;
+        background: white;
+    }
+
+    .LP-Submit {
+        flex-direction: column;
+    }
+
+    .LP-Submit button {
+        width: 100%;
+        padding: 0.9rem;
+    }
+
+    .Login-Container h2 {
+        font-size: 1.8rem;
+    }
+
+    .LP-Office-Id input,
+    .LP-Password input {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+.LP-Submit button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.input-error {
+    border-color: #ef4444 !important;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
